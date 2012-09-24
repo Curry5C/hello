@@ -1,0 +1,17 @@
+    <table align="center" width="700" bgcolor="#ffffff">
+      <tr><td bgcolor="#CB0001" height="25px"><font color="#ffffff">新闻主页:搜索结果</font></td></tr>
+      {foreach from="$record" item="v"}
+      <tr>
+        <td><img src="images/makealltop.gif" align="absmiddle"><a href="content.php?cid={$v.articleId}"><font color="red" style="line-height:25px">{$v.title}</font></a></td>
+      </tr>
+      {/foreach}
+      <tr>
+        <td>
+        {foreach from="$count" item="v"}
+        <a href="index.php?keyword={$value}&p={$v}" >{$v}</a>&nbsp;&nbsp;&nbsp;
+        {/foreach}
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

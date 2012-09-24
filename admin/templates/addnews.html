@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <script language="javascript" src="library/ckeditor/ckeditor.js"></script>
+    {literal}
+    <Script language="javaScript">
+      function initEdit()
+      {
+      	var fck = CKEDITOR.replace("content",{
+      		width:500,
+      		height:180,
+      		toolbar:"Basic",//Full、Basic
+      		skin:"v2"
+      	});
+      	fck.setData("在这里发布文章...");
+      }
+    </Script>
+    {/literal}
+  </head>
+  <body onload="initEdit()">
+  <form method="post" action="addnews.php" enctype="multipart/form-data">
+    <table width="530">
+      <tr style="line-height:25px">增加新闻</tr>
+      <tr>
+        <td bgcolor="#DCDCDC">
+          <table>
+            <tr><td>新闻标题:&nbsp;&nbsp;&nbsp;<input name="title" type="text" size="20"></td></tr>
+            <tr>
+              <td>新闻类型:&nbsp;&nbsp;&nbsp;
+              <select name="type">
+              {foreach from="$type" item="v"}
+                <option value="{$v.typeName}">{$v.typeName}</option>
+                {/foreach}
+              </select>
+              </td>
+            </tr>
+            <tr><td>发表时间:&nbsp;&nbsp;&nbsp;<input name="time" type="text" size="20"></td></tr>
+            <tr><td>新闻内容:&nbsp;&nbsp;&nbsp;<textarea name="content"></textarea></td></tr>
+            <tr><td>新闻图片:<input name="file" type="file"></td></tr>
+            <tr><td>作者 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="writer" type="text"></td></tr>
+            <tr><td>提交用户:<input name="sender" type="text" size="20"></td></tr>
+            <tr><td>新闻来源:<input name="laiyuan" type="text" size="20"></td></tr>
+            <tr><td align="center"><input type="submit" value="添加">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="取消"></input></td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </form>
+  </body>
+</html>

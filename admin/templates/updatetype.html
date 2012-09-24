@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>新闻首页</title>
+    <script type="text/javascript" src="library/jquery/jquery-1.4.js"></script>
+    {literal}
+    <script type="text/javascript">
+        function change()
+        {
+     	  $("tr:odd").css("background-color","#F1F5FE");
+        }
+        function showEditor(id)
+        {
+        	var typeName = $("#"+id+"1").html();
+        	var newsCount = $("#"+id+"2").html();
+        	var btn = $("#"+id+"3").html();
+        	
+        	$("#"+id+"1").html("<input type='text' name='typeName' size='20' value='"+typeName+"'>");
+        	$("#"+id+"2").html("<input type='text' name='newsCount' size='20' value='"+newsCount+"'>");
+        	$("#"+id+"3").html("<a href=''>更新</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='#' onclick='closeEditor("+id+")'>取消</a>");
+        	
+        }
+        function closeEditor(id)
+        {
+        	
+        	$("#"+id+"1").html({$v.typeName});
+        	$("#"+id+"2").html("");
+        	$("#"+id+"3").html("");
+        }
+        function delNewsType(typeId)
+        {
+        	if(confirm('是否确定删除该类新闻？'))
+        	{
+        		window.location='updatetype.php?typeId='+typeId;
+        	}
+        }
+    </script>
+    {/literal}
+  </head>
+  <body onLoad="change()">
+     <table width="100%" align="center">
+        <tr bgcolor="#517DD2">
+          <th >类别名称</th>
+          <th >新闻数</th>
+          <th >&nbsp;</th>
+        </tr>
+        {foreach from="$typeName" item="v"}
+        <tr  align="center">
+          <td id="{$v.typeId}1">{$v.typeName}</td>
+          <td id="{$v.typeId}2">{$v.articleNums}</td>
+          <td id="{$v.typeId}3">
+            <a href="#" onClick="showEditor('{$v.typeId}')">编辑</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" onClick="delNewsType({$v.typeId})">删除</a>
+          </td>
+        </tr>
+        {/foreach}
+     </table>
+  </body>
+</html>

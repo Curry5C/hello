@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <table border="1" winth="530">
+      <tr><td style="line-height:25px">点击文章题目进行修改</td></tr>
+      <form method="get" action="find.php">
+      <tr>
+        <td style="line-height:25px">新闻搜索:&nbsp;&nbsp;&nbsp;<input type="text" size="30" name="title">
+        <select name="leixing">
+          <option value="1">标题</option>
+          <option value="2">类型</option>
+        </select>
+        <input type="submit" value="搜索">
+        </td>
+      </tr>
+      </form>
+      <tr>
+        <td>
+          <table border="1" winth="100%">
+            <tr>
+              <td>新闻编号</td>
+              <td>新闻类型</td>
+              <td>发表时间</td>
+              <td>新闻标题</td>
+              <td>评论</td>
+              <td>操作</td>
+            </tr>
+            {foreach from="$news" item="v"}
+            <tr>
+              <td>{$v.articleId}</td>
+              <td>{$v.typeName}</td>
+              <td>{$v.dateandtime}</td>
+              <td>{$v.title}</td>
+              <td><a href="reviews.php?cid={$v.articleId}" target="frame1">评论</a></td>
+              <td><a href="delnews.php?id={$v.articleId}" target="frame1">删除</a>/<a href="editnews.php?cid={$v.articleId}" target="frame1">修改</a></td>
+            </tr>
+            {/foreach}
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6">
+        {foreach from="$count" item="v"}
+        <a href="updatenews.php?p={$v}">{$v}</a>&nbsp;&nbsp;&nbsp;
+        {/foreach}
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

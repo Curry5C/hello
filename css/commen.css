@@ -1,0 +1,100 @@
+body{
+	background-color:#cccccc;
+	margin: 0px;
+	padding:0px;
+	text-align:center;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#container{
+	position:relative;
+	margin:0px auto 0px auto;
+	width:700px;
+	text-align:left;
+}
+
+#top{
+	background-color:#ffffff;
+	font-size:25px;
+	font-weight:bolder;
+	margin:0px auto 0px auto;
+}
+#uname{
+	float:left;
+	margin:20px auto 0px auto;
+	
+}
+#log{
+	text-align:right;
+	margin:0px auto 0px auto;
+}
+#banner{
+	background-image:url(../images/image1.gif);
+	height:120px;
+}
+#tname{
+	color:#ffffff;
+	font-size:30px;
+	font-weight:bolder;
+	text-align:center;
+	padding-top:30px;
+	text-decoration:underline;	
+}
+#daohang{
+	color:#ffffff;
+	float:left;
+}
+#globallink{
+	margin:0px; padding-left:60px;
+}
+#globallink ul{
+    list-style:none;
+	padding:0px; margin:30px;
+}
+#globallink li{
+	color:#ffffff;
+	float:left; 
+	text-align:center;
+	width:78px;	
+}
+#globallink a{
+	display:block;
+	padding:0px 6px 11px 0px;
+	background:url(button1.jpg) no-repeat;
+	margin:0px;
+}
+#globallink a:link, #globallink a:visited{
+	font-size:16px;
+	color:#ffffff;
+	text-decoration:underline;
+}
+#globallink a:hover{
+	color:#FFFFFF;
+	text-decoration:underline;
+	background:url(button1_bg.jpg) no-repeat;
+}
+#left{
+	float:left;
+	width:200px;
+	background-color:#FFFFFF;
+	margin:10px 0px;
+	padding:0px 0px 5px 0px;
+	color:#d8ecff;
+}
+#left div{
+	background-color:#fffff;
+	margin:0px 5px 0px 5px;
+}
+#denglu{
+	border-width:1px;
+	border-style:solid;
+	border-color:#D47D9B;
+}
+#left #denglu h3{
+	font-size:12px;
+	padding:0px 0px 0px 74px;
+	color:#FFFFFF;
+	background-color:#CC0000;
+	line-height:25px;
+	margin:0px;
+}

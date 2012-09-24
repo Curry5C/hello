@@ -1,0 +1,45 @@
+    <table align="center" width="700" bgcolor="#ffffff">
+      <tr><td bgcolor="#CB0001" height="25px"><font color="#ffffff">新闻主页:{$content.title}</font></td></tr>
+      {if $content.imagepath!=null}
+      <tr><td align="center"><img src="{$content.imagepath}" width="400"></td></tr>
+      {/if}
+      <tr>
+        <td><font color="red" >{$content.content}</font></td>
+      </tr>
+            <tr><td bgcolor="#CB0001" style="line-height:25px"><font color="#ffffff">>发表评论</font></td></tr>
+      <tr>
+        <td>
+        <form action="content.php?cid={$cid}" method="post">
+          <table>
+            <tr><td>
+              <input name="face" type="radio" value="1" /><img src="images/face/1.gif" >
+              <input name="face" type="radio" value="2" /><img src="images/face/2.gif" >
+              <input name="face" type="radio" value="3" /><img src="images/face/3.gif" >
+              <input name="face" type="radio" value="4" /><img src="images/face/4.gif" >
+              <input name="face" type="radio" value="5" /><img src="images/face/5.gif" >
+              <input name="face" type="radio" value="6" /><img src="images/face/6.gif" >
+              <input name="face" type="radio" value="7" /><img src="images/face/7.gif" >
+              <input name="face" type="radio" value="8" /><img src="images/face/8.gif" >
+              <input name="face" type="radio" value="9" /><img src="images/face/9.gif" >
+              <input name="face" type="radio" value="10" /><img src="images/face/10.gif" >
+              <input name="face" type="radio" value="11" /><img src="images/face/11.gif" >
+              <input name="face" type="radio" value="12" /><img src="images/face/12.gif" >
+              <input name="face" type="radio" value="13" /><img src="images/face/13.gif" >
+              <input name="face" type="radio" value="14" /><img src="images/face/14.gif" >
+             </td></tr>
+            <tr><td><table><tr><td valign="middle">点评:</td><td><textarea rows="10" cols="70" name="content"></textarea></td></tr></table></td></tr>
+            <tr><td>姓&nbsp;名:<input name="username" type="text" size="30">&nbsp;&nbsp;&nbsp;<input type="submit" value="发表"></td></tr>
+            
+            <tr><td bgcolor="#CB0001" style="line-height:25px"><font color="#ffffff">>>新闻点评</font></td></tr>
+            {foreach from="$reviews" item="v"}
+            <tr><td class="xian"><img src="images/face/{$v.face}.gif">{$reviews.userName}于[{$v.dateandtime}]发表评论:<br>
+            {$v.body}
+            </td></tr>
+            {/foreach}
+          </table>
+         </form>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

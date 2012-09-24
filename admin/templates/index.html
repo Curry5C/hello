@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>后台管理</title>
+    <script language="javascript" src="js/dtree.js"></script>
+    <script language="javascript" src="library/jquery/jquery-1.4.js"></script>
+    {literal}
+  <style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+body,td,th {
+	font-family: 宋体;
+	font-size: 12px;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+.div3{
+	line-height:25px;
+	border-color:black;
+	border-width:1px;
+	border-style:solid;
+	width:150px;
+	position:absolute;
+	display:none;
+}
+.div1{
+	width:150px;
+	float:left;
+	background-color:#E4E9EC;
+}
+.div2{
+	width:148px;
+	float:left;
+	background-color:#E4E9EC;
+}
+#menuDiv{
+	width:600px;
+	height:25px;
+	margin-left:auto;
+	margin-right:auto;
+	line-height:25px;
+	vertical-align:middle;
+}
+-->
+</style>
+    <Script language="javaScript">
+      function dtree()
+      {
+        d = new dTree('d');
+        d.add(0,-1,'后台管理','');
+        d.add('1','0','新闻管理','');
+        d.add('11','1','<a href="addnews.php" target="frame1">添加新闻</a>',' ');
+        d.add('12','1','<a href="updatenews.php" target="frame1">修改新闻</a>','');
+        
+        d.add('2','0','分类管理',''); 
+        d.add('21','2','<a href="addtype.php" target="frame1">添加分类</a>','');
+        d.add('22','2','<a href="updatetype.php" target="frame1">修改分类</a>','');
+        d.add('3','0','用户管理','');
+        d.add('31','3','<a href="adduser.php" target="frame1">添加用户</a>','');
+        document.write(d);
+      }
+  	  function showMenu(id1,id2)
+  	  {
+  	  	hiddenMenu();
+  	  	$("#"+id1).css("background-color","gray");
+  	    var myHeight = $("#"+id1).height();
+  	  	var myLeft = $("#"+id1).offset().left;
+  	  	var myTop = $("#"+id1).offset().top + myHeight;
+  	  	$("#"+id2).css({
+  	  		left:myLeft,
+  	  		top:myTop
+  	  	});
+  	  	$("#"+id2).slideDown(500);
+  	  }
+  	  function hiddenMenu()
+  	  {
+  	  	$("#div1").css("background-color","#E4E9EC");
+  	  	$("#div2").css("background-color","#E4E9EC");
+  	  	$("#div3").css("background-color","#E4E9EC");
+  	  	$("#div4").css("background-color","#E4E9EC");
+  	  	$("#div5").hide();
+  	  	$("#div6").hide();
+  	  	$("#div7").hide();
+  	  	$("#div8").hide();
+  	  }
+    </Script>
+ {/literal}
+</head>
+  <body onclick="hiddenMenu()">
+  <table width="700" border="0" align="center">
+    <tr>
+      <td>{include file="header.html"}</td>
+    </tr>
+    <tr>
+      <td><table width="700" border="0">
+        <tr>
+          <td width="141" valign="top" bgcolor="#D3D6FF">
+          <Script language="JavaScript">
+           dtree();
+         </Script></td>
+          <td width="543"><iframe name="frame1" frameborder="0" width="543" height="550" src="show.php"></iframe></td>
+        </tr>
+      </table></td>
+    </tr>
+  </table>
+    
+</body>
+</html>

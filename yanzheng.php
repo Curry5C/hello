@@ -1,0 +1,28 @@
+<?php
+session_start();
+$width=80;
+$height=40;
+header("content_type:image/gif");
+$image=imagecreatetruecolor($width,$height);
+$color=imagecolorallocate($image,255,255,255);
+imagefilledrectangle($image,1,1,78,38,$color);
+for($i=0;$i<4;$i++){
+	$txtcolor=imagecolorallocate($image,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));
+	$x=12+$i*12;
+	$char=mt_rand(97,122);
+	$chars .=chr($char);
+	//imagestring($image,5,$x,14,$char,$txtcolor);
+	 imagettftext($image,15,mt_rand(30,-30),$x,30,$txtcolor,'arialbd.ttf',chr($char));
+	}
+	$_SESSION['vode']=$chars;
+	for($i=0;$i<100;$i++){
+		$black=imagecolorallocate($image,0,0,0);
+		imagesetpixel($image,mt_rand(0,80),mt_rand(0,80),$black);
+		}
+		for($i=0;$i<5;$i++){
+			$black=imagecolorallocate($image,0,0,0);
+			imageline($image,mt_rand(0,80),mt_rand(0,80),mt_rand(0,80),mt_rand(0,80),$black);
+			}
+imagegif($image);
+imagedestroy($image);
+?>

@@ -1,0 +1,43 @@
+body{
+	background-color:#cccccc;
+	margin: 0px;
+	padding:0px;
+	text-align:center;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#container{
+	background-color:#ffffff;
+	position:relative;
+	margin:0px auto 0px auto;
+	width:700px;
+	text-align:left;
+}
+#top{
+	background-color:#ffffff;
+	font-size:25px;
+	font-weight:bolder;
+	margin:0px auto 0px auto;
+}
+#uname{
+	float:left;
+	margin:20px auto 0px auto;
+	
+}
+#log{
+	float:right;
+	margin:0px auto 0px auto;
+}
+#banner{
+	background-image:url(../images/image1.gif);
+	margin-top:60px;
+	height:120px;
+}
+#tname{
+	color:#ffffff;
+	font-size:30px;
+	font-weight:bolder;
+	text-align:center;
+	paddin-top:30px;
+	text-decoration:underline;	
+}
