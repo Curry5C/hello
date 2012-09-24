@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 header("content-type:text/html;charset=utf-8");
 session_start();
 include_once 'header.php';
@@ -26,7 +26,7 @@ if($userName!=null){
 		echo "</script>";
 	}else{
 		echo "<script language='javascript'>";
-		echo "alert('登陆失败');";
+		echo "alert('登陆失败,请重新登入');";
 		echo "window.location='index.php'";
 		echo "</script>";
 	}
